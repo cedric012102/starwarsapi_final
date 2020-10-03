@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './components/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -8,6 +8,8 @@ import Planets from './components/Planets';
 import Starships from './components/Starships';
 import Force from './components/Force';
 import Spinner from 'react-bootstrap/Spinner';
+
+
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -30,26 +32,28 @@ function App() {
       let res = await fetch("https://swapi.dev/api/people/");
       let data = await res.json();
       setPeople(data.results);
+      setSpinning(false);
       }
 
       async function fetchPlanets() {
         let res = await fetch("https://swapi.dev/api/planets/");
         let data = await res.json();
         setPlanets(data.results);
+        setSpinning(false);
       }
 
       async function fetchStarships() {
         let res = await fetch("https://swapi.dev/api/starships/");
         let data = await res.json();
         setStarships(data.results);
+        setSpinning(false);
         }
 
       fetchPeople();
       fetchPlanets();
       fetchStarships();
-      setSpinning(false);
-  }, []);
-  console.log('data', starships);
+      }, []);
+  console.log('data', planets);
   
   
 
@@ -79,6 +83,8 @@ function App() {
           </Route>
         </Switch>
         )}
+  
+        
       </Container>
       </Router>
 

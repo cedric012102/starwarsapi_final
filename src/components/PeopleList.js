@@ -1,26 +1,39 @@
 // import React from 'react';
-// import { People } from './People';
+// import { NewPerson } from './NewPerson';
 
+// export const PeopleList = (props) => {
+//     const { people, updatePerson } = props;
 
-// export class HousesList extends React.Component {
-//     state = {
-//         people: []
-//     };
-
-
-
-//     render() {
-//         return (
-//             <div className='people-list'>
-//                 {this.state.people.map((people) => (
-//                     <People 
-//                     people={people}
-//                     key={people._id}
-//                     updatePeople={this.updatePeople}
-//                     />
-//                 ))}
-//             </div>
-//         )
+//     const deletePerson = (personId) => {
+//         const updatedPerson = {
+//             ...people,
+//             persons: people.persons.filter((x) => x._id !== personId)
+//         };
+//         updatePerson(updatedPerson);
 //     }
 
-// }
+//     const addNewPerson = (person) => updatePerson({ ...people, persons: [...people.persons, person]});
+
+//         const persons = () => (
+//             <ul>
+//                 {people.persons.map((person, index) => (
+//                     <li key={index}>
+//                         <label> {`${person.name}`}</label>
+//                         <button onClick={(e) => deletePerson(person._id)}>Delete</button>
+//                     </li>
+//                 ))}
+//             </ul>
+//         );
+
+//         return (
+//             <div>
+//                 <h1>{people.name}</h1>
+//                 {
+//                     persons({ persons, peopleId: people._id, deletePerson})
+//                 }
+//                 <NewPerson addNewPerson={addNewPerson} />
+//             </div>
+//         );
+//     };
+
+  
