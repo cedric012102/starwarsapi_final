@@ -4,8 +4,8 @@ const initialState = {
     count: 0
 };
 
-const resistanceQuote = "You don't know the power of the dark side!";
-const firstOrderQuote = "May the force be with you!";
+const resistanceQuote = "YOU DON'T KNOW THE POWER OF THE DARKSIDE!";
+const firstOrderQuote = "MAY THE FORCE BE WITH YOU!";
 
 export default (state = initialState, action) => {
     switch (action.type) {
